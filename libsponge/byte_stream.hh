@@ -11,7 +11,10 @@
 class ByteStream {
   private:
     // Your code here -- add private members as necessary.
-
+    std::string buffer = "";
+    size_t capacity_ = 0, size = 0;
+    size_t total_in = 0, total_out = 0;
+    bool stop = 0;
     // Hint: This doesn't need to be a sophisticated data structure at
     // all, but if any of your tests are taking longer than a second,
     // that's a sign that you probably want to keep exploring
