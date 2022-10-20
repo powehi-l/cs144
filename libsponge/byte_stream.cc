@@ -14,7 +14,6 @@ using namespace std;
 
 ByteStream::ByteStream(const size_t capacity) {
     this->capacity_ = capacity;
-    this->size = 0;
 }
 
 size_t ByteStream::write(const string &data) {
@@ -70,15 +69,19 @@ void ByteStream::pop_output(const size_t len) {
 //! \returns a string
 std::string ByteStream::read(const size_t len) {
     string out;
-    if (size < len) {
-        size = 0;
-        out = peek_output(size);
-        pop_output(len);
-    } else {
-        size -= len;
-        out = peek_output(len);
-        pop_output(len);
-    }
+    // if (size < len) {
+    //     size = 0;
+    //     out = peek_output(size);
+    //     pop_output(len);
+    // } else {
+    //     size -= len;
+    //     out = peek_output(len);
+    //     pop_output(len);
+    // }
+    int number = (size < len)?size:len;
+    size -= number;
+    out = peek_output(number);
+    pop_output(number);
     return out;
 }
 
