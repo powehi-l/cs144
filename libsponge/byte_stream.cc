@@ -70,7 +70,7 @@ size_t ByteStream::buffer_size() const { return buffer.size(); }
 
 bool ByteStream::buffer_empty() const { return buffer.size() == 0; }
 
-bool ByteStream::eof() const { return (end_write && buffer.size() == 0); }
+bool ByteStream::eof() const { return (end_write && (buffer.size() == 0)); }
 
 size_t ByteStream::bytes_written() const { return total_in; }
 
