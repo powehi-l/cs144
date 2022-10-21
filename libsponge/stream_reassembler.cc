@@ -83,6 +83,8 @@ size_t StreamReassembler::unassembled_bytes() const {
 
 bool StreamReassembler::empty() const { return un_reas.empty(); }
 
+size_t StreamReassembler::next_unreassembly() const {return next_index;}
+
 
 // void StreamReassembler::push_substring(const string &data, const size_t index, const bool eof) {
 //     string cut_post = data;
